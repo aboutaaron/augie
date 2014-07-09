@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Monoton' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -20,23 +21,38 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <section id="template-target"></section>
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+
+                    <a href="#" class="head">
+                        <img src="images/head.png" alt="" class="img-responsive">
+                    </a>
+
+                    <h1 class="bumper" id="neon1">
+                        <a class="glow" href="">Augie's Adages</a>
+                    </h1>
+
+                    <small>Selected quotes from New Mexico's King of data</small>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p class="quote"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/tabletop/src/tabletop.js"></script>
-    <script src="bower_components/handlebars/handlebars.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
-    <!-- Templates -->
-    <script id="template" type='text/ractive'>
-    {{#quotes}}
-        <p>{{ quote }}</p>
-    {{/quotes}}
-    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
