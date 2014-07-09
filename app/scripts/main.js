@@ -35,7 +35,7 @@ App = {
 
   },
   videoBackground: function() {
-    var videoIds = ['doVYFjIJcfU', 'j0kQ6ZEVkmc', 'JVZwoLZgrRs', 'bsaA903oxvc', 'zL0ipXUD-uU', 'EX_9jKFpQKM', 'qpyecIbxGMc', 'Zpq2l-Ljjrw', '6UeCRY1wciA', 'R8XAlSp838Y', 'WWAf0b3yNko', 'Fe93CLbHjxQ', 'sZkxJhsP384'];
+    var videoIds = ['doVYFjIJcfU', 'j0kQ6ZEVkmc', 'JVZwoLZgrRs', 'bsaA903oxvc', 'zL0ipXUD-uU', 'EX_9jKFpQKM', 'qpyecIbxGMc', 'Zpq2l-Ljjrw', '6UeCRY1wciA', 'R8XAlSp838Y', 'WWAf0b3yNko', 'Fe93CLbHjxQ', 'sZkxJhsP384', '7AEMiz6rcxc', 'BazcTCoXcTA'];
     $.okvideo({
       video: App._generateId(_.sample(videoIds)),
       annotations: false,
