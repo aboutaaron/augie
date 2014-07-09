@@ -1,11 +1,51 @@
-/*global Tabletop: false */
+/*global Tabletop: false, _: false */
 'use strict';
 
 var App = App || {};
 
 App = {
   init: function () {
+    App.videoBackground();
     App.loadSpreadsheet();
+  },
+  typeahead: function () {
+    var $writer = $('#quote-text'),
+        text = $writer.text(),
+        textLength = text.length,
+        timeOut,
+        character = 0;
+
+    $writer.text('|');
+
+    (function typeIt () {
+      var humanize = Math.round(Math.random() * (200 - 30)) + 30;
+
+      timeOut = setTimeout(function () {
+        character++;
+        var type = text.substring(0, character);
+        $writer.text(type + '|');
+        typeIt();
+
+        if (character === textLength) {
+          $writer.text($writer.text().slice(0, -1)); // remove '|'
+          clearTimeout(timeOut);
+        }
+      }, humanize);
+    }());
+
+  },
+  videoBackground: function() {
+    var videoIds = ['doVYFjIJcfU', 'j0kQ6ZEVkmc', 'JVZwoLZgrRs', 'bsaA903oxvc', 'zL0ipXUD-uU', 'EX_9jKFpQKM', 'qpyecIbxGMc', 'Zpq2l-Ljjrw', '6UeCRY1wciA', 'R8XAlSp838Y', 'WWAf0b3yNko', 'Fe93CLbHjxQ', 'sZkxJhsP384'];
+    $.okvideo({
+      video: App._generateId(_.sample(videoIds)),
+      annotations: false,
+      onFinished: function () {
+        location.reload();
+      }
+    });
+  },
+  _generateId: function (videoID) {
+    return '[:' + videoID + ']';
   },
   loadSpreadsheet: function () {
     var googleSpreadsheetKey = '1OWqhOiehU4iXRMipRh7LXCFzEUnSxSHEhpjPmY_T5zM';
@@ -20,9 +60,11 @@ App = {
     // Assign either the live data or the proxy data
     App.data = data.length > 1 ? data : App.proxy();
     //randomly select a quote
-    var quote = App.data[ Math.floor( Math.random() * App.data.length ) ];
+    var quote = _.sample(App.data);
 
-    $('.quote').text(quote.quote);
+    $('#quote-text').text(quote.quote);
+
+    App.typeahead();
   },
   proxy: function () {
     console.log('using proxy data');

@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Monoton' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Monoton|Iceland|Press+Start+2P' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -21,28 +21,35 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="wrapper">
+
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron augietron">
+
+                <a href="#" class="head">
+                    <img src="images/head.png" alt="" class="img-responsive">
+                </a>
+
+                <h1 class="bumper" id="neon1">
+                    <a class="glow" href="">Augie's Adages</a>
+                </h1>
+
+                <!-- <small>Selected quotes from New Mexico's King of data</small> -->
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 quote-bg">
+                <p class="quote"><span id="cursor">></span> <span id="quote-text"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
-            <div class="row">
-                <div class="jumbotron">
-
-                    <a href="#" class="head">
-                        <img src="images/head.png" alt="" class="img-responsive">
-                    </a>
-
-                    <h1 class="bumper" id="neon1">
-                        <a class="glow" href="">Augie's Adages</a>
-                    </h1>
-
-                    <small>Selected quotes from New Mexico's King of data</small>
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p class="quote"></p>
-                </div>
-            </div>
+            <span class="navbar-text">
+              Made with <span class="glyphicon glyphicon-heart"></span> by the CIR Data team. Mr. Armendariz, you'll surely be missed.
+            </span>
         </div>
     </div>
 
@@ -51,7 +58,9 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/tabletop/src/tabletop.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
+    <script src="bower_components/okvideo/src/okvideo.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
